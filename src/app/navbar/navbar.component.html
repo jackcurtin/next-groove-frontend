@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<nav *ngIf="!this.currentUser">
+  <h1>NEXT GROOVE</h1>
+  <ul>
+    <li>LOGIN</li>
+    <li>BROWSE</li>
+  </ul>
+</nav>
+
+<nav *ngIf="this.currentUser">
+  <h1>HI, {{this.currentUser.name}}</h1>
+  <ul>
+    <li>BROWSE</li>
+    <li>COLLECTION</li>
+    <li>SESSION</li>
+  </ul>
+</nav>
