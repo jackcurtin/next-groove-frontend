@@ -16,8 +16,31 @@ export class UserService {
   registerUser(newUser): void {
     console.log(newUser);
     this.http
-      .post(`${herokuUrl}/auth/users/register`, newUser)
+      .post(`${herokuUrl}/auth/register`, newUser)
       .subscribe(response => console.log(response), err => console.log(err));
+  }
+
+  loginUser(user): void {
+    console.log(user);
+    this.http
+      .post(`${herokuUrl}/auth/login`, user)
+      .subscribe(response => {
+        const token = response['jwt'];
+        localStorage.setItem('currentUser', `${user.email}`);
+        localStorage.setItem('token', `${token}`);
+        this.currentUser = user.email;
+        this.searchSubject.next(this.currentUser);
+        //   this.router.navigate(['/profile/collection']);
+        // }, err => console.log(err)
+      });
+  }
+
+  logoutUser(): void {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
+    this.currentUser = 'null';
+    this.searchSubject.next(this.currentUser);
+    // this.router.navigate(['/login']);
   }
 
 

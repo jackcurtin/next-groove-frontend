@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../services/user/user.service";
-import {ProfileService} from "../services/profile/profile.service";
+import {UserService} from '../services/user/user.service';
+import {ProfileService} from '../services/profile/profile.service';
 
 @Component({
   selector: 'app-register',
@@ -8,16 +8,20 @@ import {ProfileService} from "../services/profile/profile.service";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  public emailAddress: string;
+  public email: string;
   public password: string;
-  public name: string;
 
   registerUser(): void{
-    const newUser = {emailAddress: this.emailAddress, password: this.password};
-    const newProfile = {name: this.name};
+    const newUser = {email: this.email, password: this.password};
     this.userService.registerUser(newUser);
-    this.profileService.createProfile(newProfile);
   }
+
+  loginUser(): void{
+    const user = {email: this.email, password: this.password};
+    console.log(user);
+    this.userService.loginUser(user);
+  }
+
 
   constructor(private userService: UserService, private profileService: ProfileService) { }
 
