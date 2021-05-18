@@ -5,12 +5,11 @@
   </form>
 </span>
 
-<section id="records-grid" *ngIf="albums">
-  <ul>
-    <div class="album-thumbnail" *ngFor="let album of albums">
-      <li>
-        <p>{{album}}</p>
-      </li>
+<section id="album-grid" *ngIf="albums">
+  <div class="album-listing" *ngFor="let album of albums">
+    <img src="{{album.coverArtURL}}" class="album-cover">
+    <h3>{{album.title}}</h3>
+    <h4>{{album.artist}}</h4>
     </div>
-  </ul>
+
 </section>
