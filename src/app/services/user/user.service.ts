@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
 
 const herokuUrl = 'https://next-groove-api.herokuapp.com'
 
@@ -7,6 +8,8 @@ const herokuUrl = 'https://next-groove-api.herokuapp.com'
   providedIn: 'root'
 })
 export class UserService {
+  currentUser: string;
+  searchSubject = new Subject();
 
   constructor(private http: HttpClient) { console.log('user service loaded'); }
 
