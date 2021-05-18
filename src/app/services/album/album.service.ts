@@ -11,5 +11,8 @@ export class AlbumService {
   constructor(private http: HttpClient) { }
   getAlbums(): any {
     return this.http.get(`${herokuUrl}/albums/browse/`);
-}
+  }
+  getGenres(): any {
+    return this.http.get(`${herokuUrl}/genres/`);
+  }
 }

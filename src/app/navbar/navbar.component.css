@@ -5,7 +5,7 @@ nav{
   width: 25vw;
   align-items: center;
   text-align: center;
-  background-color: yellowgreen;
+  background-color: midnightblue;
   color: white;
 }
 span{
@@ -19,6 +19,9 @@ a{
   text-decoration: none;
   color: white;
   font-size: 24px;
+}
+a:hover{
+  font-size: 25px;
 }
 li{
   padding-top: 10%;
