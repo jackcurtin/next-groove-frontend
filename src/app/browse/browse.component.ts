@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AlbumService} from '../services/album/album.service';
+import {SearchService} from '../services/search/search.service';
+import {Subject} from 'rxjs';
+import {distinctUntilChanged} from "rxjs/operators";
 
 @Component({
   selector: 'app-browse',
@@ -8,8 +11,11 @@ import {AlbumService} from '../services/album/album.service';
 })
 export class BrowseComponent implements OnInit {
   albums = [];
+  searchInput: string;
+  filteredAlbums: any;
+  searchSubject = new Subject();
 
-  constructor(private albumService: AlbumService) { }
+  constructor(private albumService: AlbumService, private searchService: SearchService) { }
 
   getAlbums(): any {
     this.albumService.getAlbums().subscribe(response => {
@@ -19,6 +25,14 @@ export class BrowseComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAlbums();
+    this.searchSubject.subscribe(searchCriteria => {
+      console.log(searchCriteria);
+      this.filteredAlbums = this.searchService.findAlbums(searchCriteria, this.albums);
+    });
+  }
+
+  pushSearch(searchInput): void{
+    this.searchSubject.next(searchInput);
   }
 
 }

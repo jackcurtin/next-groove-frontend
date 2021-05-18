@@ -1,15 +1,17 @@
-<span id="search">
+<div id="browse-page">
+  <span id="search">
   <h2>Looking for something specific?</h2>
   <form>
-    <input placeholder="search by title or artist">
+    <input [(ngModel)]="searchInput" type="text" placeholder="search by title or artist" name="searchbar" (keyup)="pushSearch(searchInput)">
   </form>
+
 </span>
 
-<section id="album-grid" *ngIf="albums">
-  <div class="album-listing" *ngFor="let album of albums">
-    <img src="{{album.coverArtURL}}" class="album-cover">
-    <h3>{{album.title}}</h3>
-    <h4>{{album.artist}}</h4>
+  <section id="album-grid" *ngIf="albums">
+    <div class="album-listing" *ngFor="let album of albums">
+      <img src="{{album.coverArtURL}}" class="album-cover">
+      <h3>{{album.title}}</h3>
+      <h4>{{album.artist}}</h4>
     </div>
-
-</section>
+  </section>
+</div>

@@ -6,6 +6,7 @@ nav{
   align-items: center;
   text-align: center;
   background-color: yellowgreen;
+  color: white;
 }
 span{
   padding-top: 12vh;
@@ -15,5 +16,13 @@ ul{
   padding-left: 0px;
 }
 a{
-  text-decoration: none black;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+li{
+  padding-top: 10%;
+}
+h1{
+  font-size: 27px;
 }
