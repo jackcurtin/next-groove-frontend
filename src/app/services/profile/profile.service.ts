@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Subject} from 'rxjs';
 
 const herokuUrl = 'https://next-groove-api.herokuapp.com';
@@ -15,8 +15,20 @@ export class ProfileService {
 
   createProfile(newProfile): void {
     console.log(newProfile);
+    const token = localStorage.getItem('token');
+    console.log(token);
+    const requestOptions = {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`
+      }),
+    };
     this.http
-      .post(`${herokuUrl}/auth/create-profile`, newProfile)
+      .post(`${herokuUrl}/auth/create-profile`, newProfile, requestOptions)
       .subscribe(response => console.log(response), err => console.log(err));
+  }
+
+  getProfile(): any{
+    this.http.get(`${herokuUrl}/profile`)
+      .subscribe(response => response, err => console.log(err));
   }
 }

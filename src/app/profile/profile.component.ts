@@ -10,6 +10,7 @@ import {UserService} from '../services/user/user.service';
 export class ProfileComponent implements OnInit {
   public name: string;
   public currentUser: any;
+  public currentProfile;
 
   constructor(private profileService: ProfileService, private userService: UserService) { }
 
@@ -22,6 +23,7 @@ export class ProfileComponent implements OnInit {
       this.currentUser = currentUser;
       console.log(currentUser);
     });
+    this.currentProfile = this.profileService.getProfile();
   }
 
 }
