@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../services/user/user.service";
+import {ProfileService} from "../services/profile/profile.service";
 
 @Component({
   selector: 'app-register',
@@ -15,9 +16,10 @@ export class RegisterComponent implements OnInit {
     const newUser = {emailAddress: this.emailAddress, password: this.password};
     const newProfile = {name: this.name};
     this.userService.registerUser(newUser);
+    this.profileService.createProfile(newProfile);
   }
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private profileService: ProfileService) { }
 
   ngOnInit(): void {
   }
