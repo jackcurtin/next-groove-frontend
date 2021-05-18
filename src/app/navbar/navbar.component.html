@@ -1,17 +1,19 @@
-<nav *ngIf="!this.currentUser">
-  <h1>NEXT GROOVE</h1>
-  <ul>
-    <li><a routerLink="/register">REGISTER</a> </li>
-    <li><a routerLink="/login">LOGIN</a> </li>
-    <li><a routerLink="/browse/">BROWSE</a></li>
+<nav>
+  <span *ngIf="!this.currentUser">
+    <h1>NEXT GROOVE</h1>
+    <ul>
+      <li><a routerLink="/register">REGISTER</a></li>
+      <li><a routerLink="/login">LOGIN</a></li>
+      <li><a routerLink="/browse/">BROWSE</a></li>
   </ul>
-</nav>
+  </span>
+  <span *ngIf="this.currentUser">
+    <h1>HI, {{this.currentUser.name}}</h1>
+    <ul>
+      <li><a routerLink="/browse/">BROWSE</a></li>
+      <li>COLLECTION</li>
+      <li>SESSION</li>
+    </ul>
+  </span>
 
-<nav *ngIf="this.currentUser">
-  <h1>HI, {{this.currentUser.name}}</h1>
-  <ul>
-    <li><a routerLink="/browse/">BROWSE</a></li>
-    <li>COLLECTION</li>
-    <li>SESSION</li>
-  </ul>
 </nav>

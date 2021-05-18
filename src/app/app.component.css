@@ -1,0 +1,6 @@
+body{
+  display: inline-flex;
+}
+router-outlet{
+  margin: 1%;
+}

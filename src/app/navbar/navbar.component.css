@@ -1,0 +1,19 @@
+nav{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 25vw;
+  align-items: center;
+  text-align: center;
+  background-color: yellowgreen;
+}
+span{
+  padding-top: 12vh;
+}
+ul{
+  padding-top: 15vh;
+  padding-left: 0px;
+}
+a{
+  text-decoration: none black;
+}

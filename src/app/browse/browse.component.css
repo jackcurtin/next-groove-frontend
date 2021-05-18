@@ -1,6 +1,6 @@
 #album-grid{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
 }
 
@@ -8,7 +8,7 @@
   max-width: 60%;
 }
 .album-listing{
-  border: black 2px solid;
+  border: 1px grey solid;
   text-align: center;
   padding-top: 10%;
   margin: 2%;
