@@ -3,14 +3,14 @@
   <ul>
     <li><a routerLink="/register">REGISTER</a> </li>
     <li><a routerLink="/login">LOGIN</a> </li>
-    <li><a routerLink="/albums/browse/">BROWSE</a></li>
+    <li><a routerLink="/browse/">BROWSE</a></li>
   </ul>
 </nav>
 
 <nav *ngIf="this.currentUser">
   <h1>HI, {{this.currentUser.name}}</h1>
   <ul>
-    <li>BROWSE</li>
+    <li><a routerLink="/browse/">BROWSE</a></li>
     <li>COLLECTION</li>
     <li>SESSION</li>
   </ul>

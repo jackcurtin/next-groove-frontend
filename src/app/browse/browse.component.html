@@ -1,0 +1,16 @@
+<span id="search">
+  <h2>Looking for something specific?</h2>
+  <form>
+    <input placeholder="search by title or artist">
+  </form>
+</span>
+
+<section id="records-grid" *ngIf="albums">
+  <ul>
+    <div class="album-thumbnail" *ngFor="let album of albums">
+      <li>
+        <p>{{album}}</p>
+      </li>
+    </div>
+  </ul>
+</section>
