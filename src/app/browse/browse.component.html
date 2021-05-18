@@ -6,9 +6,15 @@
   </form>
 
 </span>
-
-  <section id="album-grid" *ngIf="albums">
+  <section class="album-grid" *ngIf="!searchInput">
     <div class="album-listing" *ngFor="let album of albums">
+      <img src="{{album.coverArtURL}}" class="album-cover">
+      <h3>{{album.title}}</h3>
+      <h4>{{album.artist}}</h4>
+    </div>
+  </section>
+  <section class="album-grid" *ngIf="searchInput">
+    <div class="album-listing" *ngFor="let album of filteredAlbums">
       <img src="{{album.coverArtURL}}" class="album-cover">
       <h3>{{album.title}}</h3>
       <h4>{{album.artist}}</h4>
