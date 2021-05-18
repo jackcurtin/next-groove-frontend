@@ -38,7 +38,6 @@ export class UserService {
         this.currentUser = user;
         console.log(token);
         this.searchSubject.next(this.currentUser);
-        this.profileService.createProfile(newProfile);
         this.router.navigate(['/profile']);
         }, err => console.log(err));
   }

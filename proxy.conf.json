@@ -1,0 +1,6 @@
+{
+  "/profile": {
+    "target": "https://next-groove-api.herokuapp.com",
+    "secure": false
+  }
+}

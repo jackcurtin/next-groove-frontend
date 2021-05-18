@@ -15,7 +15,8 @@ export class ProfileComponent implements OnInit {
   constructor(private profileService: ProfileService, private userService: UserService) { }
 
   createProfile(): void{
-    this.profileService.createProfile(this.name);
+    const newProfile = {name: this.name};
+    this.profileService.createProfile(newProfile);
   }
 
   ngOnInit(): void {
