@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from '../services/user/user.service';
 
 @Component({
@@ -7,15 +7,11 @@ import {UserService} from '../services/user/user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  currentUser: any;
+  @Input() currentUser: any;
 
-  constructor(private userService: UserService) { }
+
+  constructor() { }
 
   // tslint:disable-next-line:use-lifecycle-interface
-  ngOnInit(): void {
-    this.userService.searchSubject.subscribe(currentUser => {
-      this.currentUser = currentUser;
-      console.log(currentUser);
-    });
-  }
+  ngOnInit(): void {}
 }

@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   registerUser(): void{
     const newUser = {email: this.email, password: this.password};
     this.userService.registerUser(newUser);
+
   }
 
   loginUser(): void{
