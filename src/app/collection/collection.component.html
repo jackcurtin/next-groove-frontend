@@ -1,17 +1,22 @@
 <h2>Hi, {{myProfile.name}}</h2>
-<ul id="collection-list" *ngFor="let album of myCollection">
-  <li class="collection-listings">
-    <img src="{{album.coverArtURL}}" class="collection-covers">
-    <div>
-      <h3>{{album.title}}</h3>
-      <h3>{{album.artist}}</h3>
-      <p>{{album.genre.name}}</p>
-      <p>TONE</p>
-      <p>({{album.avgHLVal}}, {{album.avgMDVal}})</p>
-      <p>MOOD</p>
-      <p>({{album.avgFSVal}}, {{album.avgUDVal}})</p>
-    </div>
-    <button id="select-button">select</button>
-    <button (click)="removeFromCollection(album)" id="remove-button">remove</button>
-  </li>
-</ul>
+<section *ngIf="!mySelection">
+  <ul id="collection-list" *ngFor="let album of myCollection">
+    <li class="collection-listings">
+      <img src="{{album.coverArtURL}}" class="collection-covers">
+      <div>
+        <h3>{{album.title}}</h3>
+        <h3>{{album.artist}}</h3>
+        <p>{{album.genre.name}}</p>
+        <p>TONE</p>
+        <p>({{album.avgHLVal}}, {{album.avgMDVal}})</p>
+        <p>MOOD</p>
+        <p>({{album.avgFSVal}}, {{album.avgUDVal}})</p>
+      </div>
+      <button (click)="selectAlbum(album)" id="select-button">select</button>
+      <button (click)="removeFromCollection(album)" id="remove-button">remove</button>
+    </li>
+  </ul>
+</section>
+<section *ngIf="mySelection">
+  <app-session [selection]="mySelection" [collection]="myCollection"></app-session>
+</section>

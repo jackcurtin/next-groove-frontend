@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProfileService} from '../services/profile/profile.service';
 
 @Component({
   selector: 'app-session',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./session.component.css']
 })
 export class SessionComponent implements OnInit {
+  @Input() selection: any;
+  @Input() collection: [];
+  nextGroove: any;
 
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
   }

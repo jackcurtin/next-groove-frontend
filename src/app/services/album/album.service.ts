@@ -15,4 +15,8 @@ export class AlbumService {
   getGenres(): any {
     return this.http.get(`${herokuUrl}/genres/`);
   }
+  getAlbum(album): any {
+    console.log(album);
+    return this.http.get(`${herokuUrl}/albums/browse/${album.id}`);
+  }
 }

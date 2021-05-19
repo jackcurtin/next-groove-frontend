@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileService} from '../services/profile/profile.service';
+import {AlbumService} from '../services/album/album.service';
 
 @Component({
   selector: 'app-collection',
@@ -9,8 +10,9 @@ import {ProfileService} from '../services/profile/profile.service';
 export class CollectionComponent implements OnInit {
   myProfile: any;
   myCollection = [];
+  mySelection: any;
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private profileService: ProfileService, private albumService: AlbumService) { }
 
   ngOnInit(): void {
     this.getProfile();
@@ -33,6 +35,12 @@ export class CollectionComponent implements OnInit {
     this.profileService.removeFromCollection(album)
       .subscribe(response => response, err => console.log(err));
     this.getCollection();
+  }
+  selectAlbum(album): any{
+    this.mySelection = this.albumService.getAlbum(album)
+      .subscribe(response => {
+        this.mySelection = response;
+      }, err => console.log(err));
   }
 
 }
