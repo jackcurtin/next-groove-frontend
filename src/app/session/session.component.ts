@@ -14,6 +14,7 @@ export class SessionComponent implements OnInit {
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
+    console.log(this.collection);
     this.nextGroove = this.findNextGroove(this.selection, this.collection);
     console.log(this.nextGroove);
   }

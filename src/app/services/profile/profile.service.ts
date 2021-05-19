@@ -87,15 +87,24 @@ export class ProfileService {
 
   findNextGroove(selection, collection): any{
     let next = collection[0];
+    console.log(selection);
+    console.log(selection.id + " : ids : " + next.id);
+    if (selection.id === next.id){
+      next = collection[1];
+    }
     let closestToneMatch = this.compareTone(selection, collection[0]);
     let closestMoodMatch = this.compareMood(selection, collection[0]);
     collection.forEach(album => {
-      let compareTone = this.compareTone(selection, album);
-      let compareMood = this.compareMood(selection, album);
-      if (compareTone < closestToneMatch && compareTone < closestMoodMatch){
-        closestToneMatch = compareTone;
-        closestMoodMatch = compareMood;
-        next = album;
+      if (album.id === selection.id){
+        console.log('skipping match');
+      } else {
+        let compareTone = this.compareTone(selection, album);
+        let compareMood = this.compareMood(selection, album);
+        if (compareTone < closestToneMatch && compareTone < closestMoodMatch) {
+          closestToneMatch = compareTone;
+          closestMoodMatch = compareMood;
+          next = album;
+        }
       }
     });
     return next;
