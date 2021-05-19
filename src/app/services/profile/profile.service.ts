@@ -39,8 +39,14 @@ export class ProfileService {
   }
 
   getCollection(): any {
-    const profile = this.getProfile();
-    return this.getProfile().collection;
+    const token = localStorage.getItem('token');
+    console.log(token);
+    const requestOptions = {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`
+      })
+    };
+    return this.http.get(`${herokuUrl}/profile/collection`, requestOptions);
   }
 
   addToCollection(album): any {
@@ -54,5 +60,17 @@ export class ProfileService {
     this.http
       .post(`${herokuUrl}/albums/addToCollection/${album.id}`, null, requestOptions)
       .subscribe(response => console.log(response), err => console.log(err));
+  }
+
+  removeFromCollection(album): void {
+    const token = localStorage.getItem('token');
+    console.log(token);
+    const requestOptions = {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`
+      })
+    };
+    this.http
+      .delete(`${herokuUrl}/profile/collection/${album.id}`, requestOptions);
   }
 }

@@ -14,14 +14,24 @@ export class CollectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProfile();
-    this.myCollection = this.myProfile.collection;
+    this.getCollection();
   }
 
-  getProfile(): any{
-    this.myProfile = this.profileService.getProfile()
+  getProfile(): void{
+    this.profileService.getProfile()
       .subscribe(response => {
       this.myProfile = response; },
       err => console.log(err));
+  }
+  getCollection(): void{
+    this.profileService.getCollection()
+      .subscribe(response => {
+        this.myCollection = response;
+      }, err => console.log(err));
+  }
+  removeFromCollection(album): void{
+    this.profileService.removeFromCollection(album);
+    this.getCollection();
   }
 
 }

@@ -1,1 +1,7 @@
 <h2>Hi, {{myProfile.name}}</h2>
+<ul id="collection-list" *ngFor="let album of myCollection">
+  <li>
+    {{album.title}} -- {{album.artist}}
+    <button (click)="removeFromCollection(album)">remove</button>
+  </li>
+</ul>
