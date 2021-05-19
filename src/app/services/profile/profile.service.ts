@@ -62,7 +62,7 @@ export class ProfileService {
       .subscribe(response => console.log(response), err => console.log(err));
   }
 
-  removeFromCollection(album): void {
+  removeFromCollection(album): any {
     const token = localStorage.getItem('token');
     console.log(token);
     const requestOptions = {
@@ -70,7 +70,7 @@ export class ProfileService {
         Authorization: `Bearer ${token}`
       })
     };
-    this.http
+    return this.http
       .delete(`${herokuUrl}/profile/collection/${album.id}`, requestOptions);
   }
 }

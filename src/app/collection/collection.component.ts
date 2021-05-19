@@ -30,7 +30,8 @@ export class CollectionComponent implements OnInit {
       }, err => console.log(err));
   }
   removeFromCollection(album): void{
-    this.profileService.removeFromCollection(album);
+    this.profileService.removeFromCollection(album)
+      .subscribe(response => response, err => console.log(err));
     this.getCollection();
   }
 
