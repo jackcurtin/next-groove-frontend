@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AlbumService} from '../services/album/album.service';
 import {SearchService} from '../services/search/search.service';
 import {Subject} from 'rxjs';
+import {ProfileService} from '../services/profile/profile.service';
 
 @Component({
   selector: 'app-browse',
@@ -17,7 +18,9 @@ export class BrowseComponent implements OnInit {
   genreFilter: any;
   searchSubject = new Subject();
 
-  constructor(private albumService: AlbumService, private searchService: SearchService) { }
+  constructor(private albumService: AlbumService,
+              private searchService: SearchService,
+              private profileService: ProfileService) { }
 
   getAlbums(): any {
     this.albumService.getAlbums().subscribe(response => {
@@ -56,6 +59,10 @@ export class BrowseComponent implements OnInit {
     }else{
       this.albums = this.albums.filter(album => album.genre.name === this.genres[this.genreFilter].name);
     }
+  }
+
+  addToCollection(album): void{
+    this.profileService.addToCollection(album);
   }
 
 }

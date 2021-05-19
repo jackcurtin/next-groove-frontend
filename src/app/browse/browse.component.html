@@ -14,6 +14,7 @@
       <img src="{{album.coverArtURL}}" class="album-cover">
       <h3>{{album.title}}</h3>
       <h4>{{album.artist}}</h4>
+      <button (click)="addToCollection(album)">ADD TO COLLECTION</button>
     </div>
   </section>
   <section class="album-grid" *ngIf="searchInput">

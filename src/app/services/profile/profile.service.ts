@@ -42,4 +42,17 @@ export class ProfileService {
     const profile = this.getProfile();
     return this.getProfile().collection;
   }
+
+  addToCollection(album): any {
+    const token = localStorage.getItem('token');
+    console.log(token);
+    const requestOptions = {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`
+      })
+    };
+    this.http
+      .post(`${herokuUrl}/albums/addToCollection/${album.id}`, null, requestOptions)
+      .subscribe(response => console.log(response), err => console.log(err));
+  }
 }
