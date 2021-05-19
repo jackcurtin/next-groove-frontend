@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {RegisterComponent} from './register/register.component';
 import {ProfileComponent} from './profile/profile.component';
 import {LoginComponent} from './login/login.component';
-import {BrowseComponent} from "./browse/browse.component";
+import {BrowseComponent} from './browse/browse.component';
+import {CollectionComponent} from './collection/collection.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'browse',
     component: BrowseComponent
+  },
+  {
+    path: 'profile/collection',
+    component: CollectionComponent
   }
 ];
 

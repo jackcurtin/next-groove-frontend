@@ -16,7 +16,6 @@ export class AppComponent {
   ngOnInit(): void {
     this.userService.searchSubject.subscribe(currentUser => {
       this.currentUser = currentUser;
-      console.log(currentUser);
     });
   }
 }

@@ -10,6 +10,12 @@ const herokuUrl = 'https://next-groove-api.herokuapp.com';
 export class ProfileService {
   currentUser: string;
   searchSubject = new Subject();
+  // token2 = localStorage.getItem('token');
+  // requestOptions2 = {
+  //   headers: new HttpHeaders({
+  //     Authorization: `Bearer ${this.token2}`
+  //   })
+  // };
 
   constructor(private http: HttpClient) { console.log('profile service loaded'); }
 
@@ -28,7 +34,19 @@ export class ProfileService {
   }
 
   getProfile(): any{
-    this.http.get(`${herokuUrl}/profile`)
+    const token = localStorage.getItem('token');
+    console.log(token);
+    const requestOptions = {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`
+      })
+    };
+    this.http.get(`${herokuUrl}/profile`, requestOptions)
       .subscribe(response => response, err => console.log(err));
+  }
+
+  getCollection(): any {
+    const profile = this.getProfile();
+    return this.getProfile().collection;
   }
 }
