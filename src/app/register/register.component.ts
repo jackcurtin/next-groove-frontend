@@ -10,12 +10,10 @@ import {ProfileService} from '../services/profile/profile.service';
 export class RegisterComponent implements OnInit {
   public email: string;
   public password: string;
-  public name: string;
 
   registerUser(): void{
     const newUser = {email: this.email, password: this.password};
-    const newProfile = {name: this.name};
-    this.userService.registerUser(newUser, newProfile);
+    this.userService.registerUser(newUser);
   }
   constructor(private userService: UserService) { }
 

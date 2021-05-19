@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
-import {Router} from "@angular/router";
-import {ProfileService} from "../profile/profile.service";
+import {Router} from '@angular/router';
+import {ProfileService} from '../profile/profile.service';
 
-const herokuUrl = 'https://next-groove-api.herokuapp.com'
+const herokuUrl = 'https://next-groove-api.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'
@@ -16,19 +16,18 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router,
               private profileService: ProfileService) { console.log('user service loaded'); }
 
-  registerUser(newUser, newProfile): void {
+  registerUser(newUser): void {
     console.log(newUser);
     this.http
       .post(`${herokuUrl}/auth/register`, newUser)
       .subscribe(response => {
         console.log(response);
-        this.loginUser(newUser, newProfile);
-        this.router.navigate(['/login']);
+        this.loginUser(newUser);
+        this.router.navigate(['/profile']);
       }, err => console.log(err));
   }
 
-  loginUser(user, newProfile?): void {
-    console.log(newProfile);
+  loginUser(user): void {
     this.http
       .post(`${herokuUrl}/auth/login`, user)
       .subscribe(response => {
@@ -38,7 +37,6 @@ export class UserService {
         this.currentUser = user;
         console.log(token);
         this.searchSubject.next(this.currentUser);
-        this.router.navigate(['/profile']);
         }, err => console.log(err));
   }
 
