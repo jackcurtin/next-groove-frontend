@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { BrowseComponent } from './browse/browse.component';
 import { CollectionComponent } from './collection/collection.component';
+import { SessionComponent } from './session/session.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CollectionComponent } from './collection/collection.component';
     ProfileComponent,
     LoginComponent,
     BrowseComponent,
-    CollectionComponent
+    CollectionComponent,
+    SessionComponent
   ],
   imports: [
     BrowserModule,
