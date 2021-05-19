@@ -73,4 +73,31 @@ export class ProfileService {
     return this.http
       .delete(`${herokuUrl}/profile/collection/${album.id}`, requestOptions);
   }
+
+  compareTone(album1, album2): number{
+    const diffHL = album1.avgHLVal - album2.avgHLVal;
+    const diffMD = album1.avgMDVal - album2.avgHLVal;
+    return (diffHL * diffHL + diffMD * diffMD);
+  }
+  compareMood(album1, album2): number{
+    const diffFS = album1.avgFSVal - album2.avgFSVal;
+    const diffUD = album1.avgUDVal - album2.avgUDVal;
+    return (diffFS * diffFS + diffUD * diffUD);
+  }
+
+  findNextGroove(selection, collection): any{
+    let next = collection[0];
+    let closestToneMatch = this.compareTone(selection, collection[0]);
+    let closestMoodMatch = this.compareMood(selection, collection[0]);
+    collection.forEach(album => {
+      let compareTone = this.compareTone(selection, album);
+      let compareMood = this.compareMood(selection, album);
+      if (compareTone < closestToneMatch && compareTone < closestMoodMatch){
+        closestToneMatch = compareTone;
+        closestMoodMatch = compareMood;
+        next = album;
+      }
+    });
+    return next;
+  }
 }
