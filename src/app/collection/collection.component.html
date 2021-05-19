@@ -1,7 +1,14 @@
 <h2>Hi, {{myProfile.name}}</h2>
 <ul id="collection-list" *ngFor="let album of myCollection">
-  <li>
-    {{album.title}} -- {{album.artist}}
-    <button (click)="removeFromCollection(album)">remove</button>
+  <li class="collection-listings">
+    <img src="{{album.coverArtURL}}" class="collection-covers">
+    <div>
+      <h3>{{album.title}}</h3>
+      <h4>{{album.artist}}</h4>
+      <p>{{album.genre.name}}</p>
+      <p>{{album.tone}} - {{album.mood}}</p>
+    </div>
+    <button id="select-button">select</button>
+    <button (click)="removeFromCollection(album)" id="remove-button">remove</button>
   </li>
 </ul>
