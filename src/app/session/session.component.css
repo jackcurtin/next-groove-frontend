@@ -1,10 +1,23 @@
 #currently-listening{
-  background-color: lightgrey;
+  background-color: whitesmoke;
   height: 80%;
   text-align: center;
-  padding: 10%;
+  padding: 3%;
   margin: 3% 6%;
 }
 #selection-cover{
   width: 55%;
 }
+#next-groove{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: lightslategray;
+  margin: 3% 6% 5% 44%;
+  padding: 5%;
+  color: white;
+}
+#next-groove-cover{
+  width: 50%;
+}
+

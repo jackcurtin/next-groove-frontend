@@ -1,3 +1,6 @@
 body{
   display: inline-flex;
 }
+main{
+  text-align: center;
+}

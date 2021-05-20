@@ -37,7 +37,7 @@ export class CollectionComponent implements OnInit {
     this.getCollection();
   }
   selectAlbum(album): any{
-    this.albumService.getAlbum(album)
+    this.albumService.getAlbum(album.id)
       .subscribe(response => {
         this.mySelection = response;
       }, err => console.log(err));

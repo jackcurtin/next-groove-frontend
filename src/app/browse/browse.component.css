@@ -8,6 +8,7 @@
   max-width: 60%;
 }
 .album-listing{
+  background-color: whitesmoke;
   border: 1px grey solid;
   text-align: center;
   padding-top: 10%;

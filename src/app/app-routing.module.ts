@@ -5,7 +5,8 @@ import {ProfileComponent} from './profile/profile.component';
 import {LoginComponent} from './login/login.component';
 import {BrowseComponent} from './browse/browse.component';
 import {CollectionComponent} from './collection/collection.component';
-import {SessionComponent} from "./session/session.component";
+import {SessionComponent} from './session/session.component';
+import {RateComponent} from './rate/rate.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'profile/session',
     component: SessionComponent
+  },
+  {
+    path: 'profile/rate/:id',
+    component: RateComponent
   }
 ];
 

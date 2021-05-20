@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { BrowseComponent } from './browse/browse.component';
 import { CollectionComponent } from './collection/collection.component';
 import { SessionComponent } from './session/session.component';
+import { RateComponent } from './rate/rate.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SessionComponent } from './session/session.component';
     LoginComponent,
     BrowseComponent,
     CollectionComponent,
-    SessionComponent
+    SessionComponent,
+    RateComponent
   ],
   imports: [
     BrowserModule,
