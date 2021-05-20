@@ -17,6 +17,7 @@ import { RateComponent } from './rate/rate.component';
 
 import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
+import { ContributeComponent } from './contribute/contribute.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatButtonModule} from '@angular/material/button';
     BrowseComponent,
     CollectionComponent,
     SessionComponent,
-    RateComponent
+    RateComponent,
+    ContributeComponent
   ],
   imports: [
     BrowserModule,

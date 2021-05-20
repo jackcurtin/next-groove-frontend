@@ -7,6 +7,7 @@ import {BrowseComponent} from './browse/browse.component';
 import {CollectionComponent} from './collection/collection.component';
 import {SessionComponent} from './session/session.component';
 import {RateComponent} from './rate/rate.component';
+import {ContributeComponent} from './contribute/contribute.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'profile/rate/:id',
     component: RateComponent
+  },
+  {
+    path: 'contribute',
+    component: ContributeComponent
   }
 ];
 

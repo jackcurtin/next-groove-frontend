@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {AlbumService} from '../services/album/album.service';
 import {MatButtonModule} from '@angular/material/button';
+import {RatingService} from '../services/rating/rating.service';
 
 const herokuUrl = 'https://next-groove-api.herokuapp.com';
 
@@ -18,7 +19,7 @@ export class RateComponent implements OnInit {
   fSVal: number;
   uDVal: number;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute, private albumService: AlbumService) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private ratingService: RatingService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -37,5 +38,12 @@ export class RateComponent implements OnInit {
   }
   submitRatings(hL, mD, fS, uD): any{
     console.log(`submitting ratings ${hL}, ${mD}, ${fS}, ${uD} `);
+    const newRatingObject = {
+      mdValue: mD,
+      hiLoValue: hL,
+      fsValue: fS,
+      udValue: uD
+    };
+    return this.ratingService.rateAlbum(this.album.id, newRatingObject);
   }
 }
