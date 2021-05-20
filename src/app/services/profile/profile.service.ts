@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Subject} from 'rxjs';
+import {Router} from '@angular/router';
 
 const herokuUrl = 'https://next-groove-api.herokuapp.com';
 
@@ -11,7 +12,7 @@ export class ProfileService {
   currentUser: string;
   searchSubject = new Subject();
 
-  constructor(private http: HttpClient) { console.log('profile service loaded'); }
+  constructor(private http: HttpClient, private router: Router) { console.log('profile service loaded'); }
 
   createProfile(newProfile): void {
     console.log(newProfile);
@@ -24,7 +25,12 @@ export class ProfileService {
     };
     this.http
       .post(`${herokuUrl}/auth/create-profile`, newProfile, requestOptions)
-      .subscribe(response => console.log(response), err => console.log(err));
+      .subscribe(response => {
+        console.log(response);
+        this.router.navigate(['/browse']);
+      }, err => console.log(err));
+
+
   }
 
   getProfile(): any{

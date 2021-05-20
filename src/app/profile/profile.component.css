@@ -1,0 +1,10 @@
+form{
+  text-align: center;
+  margin: 15% 35%;
+  padding: 5%;
+  background-color: whitesmoke;
+  border: black solid 1px;
+}
+#name-field{
+  margin-bottom: 2%;
+}
