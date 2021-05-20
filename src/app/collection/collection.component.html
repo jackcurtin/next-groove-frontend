@@ -13,6 +13,7 @@
         <p>({{album.avgFSVal}}, {{album.avgUDVal}})</p>
       </div>
       <button (click)="selectAlbum(album)" id="select-button">select</button>
+      <button (click)="goToRating(album)" id="rating-button">rate</button>
       <button (click)="removeFromCollection(album)" id="remove-button">remove</button>
     </li>
   </ul>

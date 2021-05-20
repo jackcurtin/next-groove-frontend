@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {AlbumService} from '../services/album/album.service';
 
+const herokuUrl = 'https://next-groove-api.herokuapp.com';
+
 @Component({
   selector: 'app-rate',
   templateUrl: './rate.component.html',
@@ -14,12 +16,19 @@ export class RateComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute, private albumService: AlbumService) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => this.getAlbum(params.get('id')));
+    this.route.paramMap.subscribe(params => {
+      this.album = this.getAlbum(params.get('id'));
+    });
     console.log(this.album);
   }
 
   getAlbum(albumId): any{
-    this.album = this.albumService.getAlbum(albumId);
+    this.http
+      .get(`${herokuUrl}/albums/browse/${albumId}`)
+      .subscribe(response => {
+        console.log(response);
+        return this.album = response;
+      });
   }
 
 }
