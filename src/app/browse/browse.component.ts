@@ -12,6 +12,7 @@ import {ProfileService} from '../services/profile/profile.service';
 export class BrowseComponent implements OnInit {
   albums = [];
   genres = [];
+  userCollection: any;
 
   searchInput: string;
   filteredAlbums: any;
@@ -32,11 +33,26 @@ export class BrowseComponent implements OnInit {
       this.genres = response;
     }, err => console.log(err));
   }
+  getCollection(): any {
+    this.profileService.getCollection().subscribe(response => {
+      this.userCollection = response;
+    }, err => console.log(err));
+  }
+  checkForAlbum(album): boolean {
+    let verdict;
+    this.userCollection.forEach(thisAlbum => {
+      if (thisAlbum.title === album.title){
+        verdict = true;
+      }
+    });
+    return verdict;
+  }
 
   ngOnInit(): void {
+    this.userCollection = [];
     this.getAlbums();
     this.getGenres();
-    console.log(this.genres);
+    this.getCollection();
     this.searchSubject.subscribe(searchCriteria => {
       console.log(searchCriteria);
       if (this.genreFilter){

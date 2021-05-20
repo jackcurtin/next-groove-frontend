@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {Router} from '@angular/router';
 import {ProfileService} from '../profile/profile.service';
+import {browser} from "protractor";
+import {BrowserModule} from "@angular/platform-browser";
 
 const herokuUrl = 'https://next-groove-api.herokuapp.com';
 
@@ -45,6 +47,6 @@ export class UserService {
     localStorage.removeItem('token');
     this.currentUser = 'null';
     this.searchSubject.next(this.currentUser);
-    // this.router.navigate(['/login']);
+    this.router.navigate(['/login']);
   }
 }

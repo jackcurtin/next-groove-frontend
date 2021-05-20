@@ -14,7 +14,8 @@
       <img src="{{album.coverArtURL}}" class="album-cover">
       <mat-card-title>{{album.title}}</mat-card-title>
       <mat-card-subtitle>{{album.artist}}</mat-card-subtitle>
-      <button (click)="addToCollection(album)">ADD TO COLLECTION</button>
+      <button (click)="addToCollection(album)" *ngIf="!checkForAlbum(album)">ADD TO COLLECTION</button>
+      <mat-card-content *ngIf="checkForAlbum(album)">IN COLLECTION</mat-card-content>
     </mat-card>
   </section>
   <section class="album-grid" *ngIf="searchInput">
@@ -24,6 +25,6 @@
       <mat-card-subtitle >{{album.artist}}</mat-card-subtitle>
       <button (click)="addToCollection(album)">ADD TO COLLECTION</button>
     </mat-card>
-    <p *ngIf="!filteredAlbums && searchInput">No results</p>
+    <p *ngIf="!filteredAlbums && searchInput" id="no-results">No results</p>
   </section>
 </div>
