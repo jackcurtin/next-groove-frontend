@@ -15,12 +15,17 @@ export class LoginComponent implements OnInit {
     const user = {email: this.email, password: this.password};
     console.log(user);
     this.userService.loginUser(user);
-    this.router.navigate(['/profile/collection']);
+    this.router.navigate(['/browse']);
   }
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload');
+      location.reload();
+    } else {
+      localStorage.removeItem('foo');
+    }
   }
-
 }

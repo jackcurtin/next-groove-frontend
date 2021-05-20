@@ -51,8 +51,8 @@ export class ContributeComponent implements OnInit {
       udValue: this.uD
     };
     const newAlbum = this.albumService.createAlbum(newAlbumObject);
-    this.profileService.addToCollection(newAlbum);
-    this.ratingService.rateAlbum(newAlbum.id, newRatingObject);
+    // this.profileService.addToCollection(newAlbum);
+    // this.ratingService.rateAlbum(newAlbum.id, newRatingObject);
   }
 
 }

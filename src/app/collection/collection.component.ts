@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ProfileService} from '../services/profile/profile.service';
 import {AlbumService} from '../services/album/album.service';
 import {RatingService} from '../services/rating/rating.service';
-import {PageEvent} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-collection',
