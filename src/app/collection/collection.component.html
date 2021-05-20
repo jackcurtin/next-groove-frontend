@@ -1,5 +1,5 @@
 <h2>Hi, {{myProfile.name}}</h2>
-<section *ngIf="!mySelection">
+<section *ngIf="!mySelection" id="scrollable-list">
   <ul id="collection-list" *ngFor="let album of myCollection">
     <li class="collection-listings">
       <img src="{{album.coverArtURL}}" class="collection-covers">

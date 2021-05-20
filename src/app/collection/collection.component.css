@@ -16,3 +16,7 @@
   margin-left: 60%;
   max-width: 40%;
 }
+#scrollable-list{
+  height: 100vh;
+  overflow-y: auto;
+}
