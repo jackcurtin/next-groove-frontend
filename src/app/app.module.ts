@@ -16,9 +16,10 @@ import { SessionComponent } from './session/session.component';
 import { RateComponent } from './rate/rate.component';
 import { ContributeComponent } from './contribute/contribute.component';
 
-import {MatSliderModule} from '@angular/material/slider';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -40,11 +41,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     HttpClientModule,
     MatSliderModule,
-    MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule,
+    MatButtonModule
   ], exports: [
-    MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

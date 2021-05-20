@@ -10,6 +10,6 @@ ul{ list-style: none}
 .center-flex{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
 }

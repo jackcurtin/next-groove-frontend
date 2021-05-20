@@ -1,20 +1,31 @@
 <h2>Hi, {{myProfile.name}}</h2>
 <section *ngIf="!mySelection" id="scrollable-list">
   <ul id="collection-list" *ngFor="let album of myCollection">
-    <li class="collection-listings">
-      <img src="{{album.coverArtURL}}" class="collection-covers">
-      <div>
-        <h3>{{album.title}}</h3>
-        <h3>{{album.artist}}</h3>
-        <p>{{album.genre.name}}</p>
-        <p>TONE</p>
-        <p>({{album.avgHLVal}}, {{album.avgMDVal}})</p>
-        <p>MOOD</p>
-        <p>({{album.avgFSVal}}, {{album.avgUDVal}})</p>
-      </div>
-      <button (click)="selectAlbum(album)" id="select-button">select</button>
-      <button (click)="goToRating(album)" id="rating-button">rate</button>
-      <button (click)="removeFromCollection(album)" id="remove-button">remove</button>
+    <li>
+      <mat-card class="collection-listings">
+        <img src="{{album.coverArtURL}}" class="collection-covers">
+        <div id="album-info">
+          <div>
+          <mat-card-title>{{album.title}}</mat-card-title>
+          <mat-card-subtitle>{{album.artist}}   |   {{album.genre.name}}</mat-card-subtitle>
+          </div>
+          <div id="tone">
+            <mat-card-content>TONE</mat-card-content>
+            <mat-card-content>Production: {{album.avgHLVal}}</mat-card-content>
+            <mat-card-content>Arrangement: {{album.avgMDVal}}</mat-card-content>
+          </div>
+          <div id="mood">
+            <mat-card-content>MOOD</mat-card-content>
+            <mat-card-content>Tempo: {{album.avgFSVal}}</mat-card-content>
+            <mat-card-content>Emotion: {{album.avgUDVal}}</mat-card-content>
+          </div>
+        </div>
+        <div id="buttons">
+          <button (click)="selectAlbum(album)" id="select-button">select</button>
+          <button (click)="goToRating(album)" id="rating-button">rate</button>
+          <button (click)="removeFromCollection(album)" id="remove-button">remove</button>
+        </div>
+      </mat-card>
     </li>
   </ul>
 </section>
