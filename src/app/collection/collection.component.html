@@ -36,4 +36,7 @@
 </section>
 <section *ngIf="mySelection">
   <app-session [selection]="mySelection" [collection]="myCollection"></app-session>
+  <div class="center-flex">
+    <a (click)="clearSession()" id="end-session">End Session</a>
+  </div>
 </section>

@@ -7,12 +7,14 @@
       <mat-card-subtitle>{{selection.artist}}</mat-card-subtitle>
     </div>
   </mat-card>
-  <mat-card id="next-groove">
-    <mat-card-title id="up-next-text">UP NEXT...</mat-card-title>
-    <img src="{{nextGroove.coverArtURL}}" id="next-groove-cover">
-    <div class="bottom-text">
-      <mat-card-title>{{nextGroove.title}}</mat-card-title>
-      <mat-card-subtitle>{{nextGroove.artist}}</mat-card-subtitle>
-    </div>
-  </mat-card>
+  <div>
+    <mat-card id="next-groove">
+      <mat-card-title id="up-next-text">UP NEXT...</mat-card-title>
+      <img src="{{nextGroove.coverArtURL}}" id="next-groove-cover">
+      <div class="bottom-text">
+        <mat-card-title>{{nextGroove.title}}</mat-card-title>
+        <mat-card-subtitle>{{nextGroove.artist}}</mat-card-subtitle>
+      </div>
+    </mat-card>
+  </div>
 </section>

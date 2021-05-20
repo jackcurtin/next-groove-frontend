@@ -49,5 +49,8 @@ export class CollectionComponent implements OnInit {
     console.log('redirecting to rating page');
     this.ratingService.goToRating(album.id);
   }
+  clearSession(): void{
+    this.mySelection = null;
+  }
 
 }
