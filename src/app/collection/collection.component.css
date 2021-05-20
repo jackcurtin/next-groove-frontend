@@ -17,13 +17,13 @@
 #album-info{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   text-align: right;
 }
 #buttons{
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }

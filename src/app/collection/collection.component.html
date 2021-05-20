@@ -9,15 +9,17 @@
           <mat-card-title>{{album.title}}</mat-card-title>
           <mat-card-subtitle>{{album.artist}}   |   {{album.genre.name}}</mat-card-subtitle>
           </div>
-          <div id="tone">
-            <mat-card-content>TONE</mat-card-content>
-            <mat-card-content>Production: {{album.avgHLVal}}</mat-card-content>
-            <mat-card-content>Arrangement: {{album.avgMDVal}}</mat-card-content>
-          </div>
-          <div id="mood">
-            <mat-card-content>MOOD</mat-card-content>
-            <mat-card-content>Tempo: {{album.avgFSVal}}</mat-card-content>
-            <mat-card-content>Emotion: {{album.avgUDVal}}</mat-card-content>
+          <div id="ratings">
+            <div id="tone">
+              <mat-card-content>TONE</mat-card-content>
+              <mat-card-content>Production: {{album.avgHLVal}}</mat-card-content>
+              <mat-card-content>Arrangement: {{album.avgMDVal}}</mat-card-content>
+            </div>
+            <div id="mood">
+              <mat-card-content>MOOD</mat-card-content>
+              <mat-card-content>Tempo: {{album.avgFSVal}}</mat-card-content>
+              <mat-card-content>Emotion: {{album.avgUDVal}}</mat-card-content>
+            </div>
           </div>
         </div>
         <div id="buttons">
