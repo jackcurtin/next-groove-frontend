@@ -1,23 +1,30 @@
 #currently-listening{
-  background-color: whitesmoke;
-  height: 80%;
+  height: 70%;
   text-align: center;
-  padding: 3%;
-  margin: 3% 6%;
+  padding: 5%;
+  margin: 5%;
 }
 #selection-cover{
-  width: 55%;
+  max-width: 500px;
+  width: 70%;
 }
 #next-groove{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background-color: lightslategray;
-  margin: 3% 6% 5% 44%;
+  height: 70%;
+  text-align: center;
   padding: 5%;
+  margin: 15% 5% 5% 5%;
+  height: 35%;
+  background-color: lightslategray;
   color: white;
 }
 #next-groove-cover{
-  width: 50%;
+  width: 70%;
+}
+.bottom-text{
+  margin-top: 2%;
+}
+section{
+  display: grid;
+  grid-template-columns: 75% 25%;
 }
 
