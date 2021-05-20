@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {AlbumService} from '../services/album/album.service';
+import {MatButtonModule} from '@angular/material/button';
 
 const herokuUrl = 'https://next-groove-api.herokuapp.com';
 
@@ -35,6 +36,6 @@ export class RateComponent implements OnInit {
       });
   }
   submitRatings(hL, mD, fS, uD): any{
-    console.log('submitting ratings');
+    console.log(`submitting ratings ${hL}, ${mD}, ${fS}, ${uD} `);
   }
 }
