@@ -26,6 +26,10 @@ a:hover{
 li{
   padding-top: 10%;
 }
-h1{
-  font-size: 27px;
+#site-title{
+  font-size: 29px;
+  margin-top: 30%;
+}
+#site-title:hover{
+  font-size: 32px;
 }
