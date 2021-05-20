@@ -1,6 +1,9 @@
 body{
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  width: 100vw;
 }
 main{
   text-align: center;
+  width: 100%;
 }

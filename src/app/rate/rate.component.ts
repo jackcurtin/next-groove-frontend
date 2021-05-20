@@ -12,6 +12,10 @@ const herokuUrl = 'https://next-groove-api.herokuapp.com';
 })
 export class RateComponent implements OnInit {
   album: any;
+  hLVal: number;
+  mDVal: number;
+  fSVal: number;
+  uDVal: number;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private albumService: AlbumService) { }
 
@@ -30,5 +34,7 @@ export class RateComponent implements OnInit {
         return this.album = response;
       });
   }
-
+  submitRatings(hL, mD, fS, uD): any{
+    console.log('submitting ratings');
+  }
 }

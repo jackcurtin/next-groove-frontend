@@ -15,6 +15,8 @@ import { CollectionComponent } from './collection/collection.component';
 import { SessionComponent } from './session/session.component';
 import { RateComponent } from './rate/rate.component';
 
+import {MatSliderModule} from '@angular/material/slider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { RateComponent } from './rate/rate.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

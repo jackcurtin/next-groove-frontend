@@ -1,1 +1,24 @@
-<p>Rate for {{album.title}}</p>
+<section id="rating-window">
+  <div id="tone" class="tone-mood">
+    <h3>Tone</h3>
+    <h4>Production</h4>
+    <label>Lofi</label>
+    <mat-slider [(ngModel)]="hLVal" min="-5" max="5" step="1" value="1" thumbLabel label="production"></mat-slider>
+    <label>Hifi</label>
+    <h4>Arrangement</h4>
+    <label>Minimal</label>
+    <mat-slider [(ngModel)]="mDVal" min="-5" max="5" step="1" value="1" thumbLabel></mat-slider>
+    <label>Dense</label>
+  </div>
+  <div id="mood" class="tone-mood">
+    <h3>Mood</h3>
+    <h4>Tempo</h4>
+    <label>Slow</label>
+    <mat-slider [(ngModel)]="fSVal" min="-5" max="5" step="1" value="1" thumbLabel></mat-slider>
+    <label>Fast</label>
+    <h4>Emotion</h4>
+    <label>Depressing</label>
+    <mat-slider [(ngModel)]="uDVal" min="-5" max="5" step="1" value="1" thumbLabel></mat-slider>
+    <label>Uplifting</label>
+  </div>
+</section>
