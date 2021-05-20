@@ -1,5 +1,8 @@
-<h2>Hi, {{myProfile.name}}</h2>
 <section *ngIf="!mySelection" id="scrollable-list">
+  <div id="header">
+    <h2 id="greeting">Hi, {{myProfile.name}}</h2>
+    <h2 id="heading">Your Collection</h2>
+  </div>
   <ul id="collection-list" *ngFor="let album of myCollection">
     <li>
       <mat-card class="collection-listings">

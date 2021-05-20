@@ -32,3 +32,18 @@ button{
   text-align: center;
   margin: 4% 0%;
 }
+header{
+  display: inline-flex;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+h2{
+  display: inline;
+}
+#heading{
+  margin-left: 35%;
+}
+#greeting{
+  margin: 0 40% 0 5%;
+}
+
