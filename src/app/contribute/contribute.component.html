@@ -3,33 +3,12 @@
   <form>
     <input [(ngModel)]="title" name="title" placeholder="title">
     <input [(ngModel)]="artist" name="artist" placeholder="artist">
-    <select [(ngModel)]="genre" name="genre" (selectstart)="genre">
-      <option value="-1">Genre</option>
-      <option *ngFor="let genre of genres; index as i" value="{{i}}"> {{genre.name}}</option>
-    </select>
-    <section id="rating-window">
-      <div id="tone" class="tone-mood">
-        <h3>Tone</h3>
-        <h4>Production</h4>
-        <label>Lofi</label>
-        <mat-slider [(ngModel)]="hL" min="-5" max="5" step="1" value="0" thumbLabel label="production"></mat-slider>
-        <label>Hifi</label>
-        <h4>Arrangement</h4>
-        <label>Minimal</label>
-        <mat-slider [(ngModel)]="mD" min="-5" max="5" step="1" value="0" thumbLabel></mat-slider>
-        <label>Dense</label>
-      </div>
-      <div id="mood" class="tone-mood">
-        <h3>Mood</h3>
-        <h4>Tempo</h4>
-        <label>Slow</label>
-        <mat-slider [(ngModel)]="fS" min="-5" max="5" step="1" value="0" thumbLabel></mat-slider>
-        <label>Fast</label>
-        <h4>Emotion</h4>
-        <label>Depressing</label>
-        <mat-slider [(ngModel)]="uD" min="-5" max="5" step="1" value="0" thumbLabel></mat-slider>
-        <label>Uplifting</label>
-      </div>
-    </section>
+    <input [(ngModel)]="genre" name="genre" placeholder="genre">
+    <input [(ngModel)]="coverURL" name="coverUrl" placeholder="link to cover art">
+    <input [(ngModel)]="hL" name="hL" placeholder="Production Rating">
+    <input [(ngModel)]="mD" name="mD" placeholder="Arrangement Rating">
+    <input [(ngModel)]="fS" name="fS" placeholder="Tempo Rating">
+    <input [(ngModel)]="uD" name="uD" placeholder="Emotion Rating">
+    <input (click)="createAlbum()" type="submit" value="submit">
   </form>
 </div>

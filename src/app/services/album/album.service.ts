@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 const herokuUrl = 'https://next-groove-api.herokuapp.com';
 
@@ -17,5 +17,15 @@ export class AlbumService {
   }
   getAlbum(albumId): any {
     return this.http.get(`${herokuUrl}/albums/browse/${albumId}`);
+  }
+  createAlbum(newAlbumObject): any {
+    const token = localStorage.getItem('token');
+    const requestOptions = {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`
+      })
+    };
+    return this.http.post(`${herokuUrl}/albums/add`, newAlbumObject, requestOptions)
+      .subscribe(respose => respose), err => console.log(err);
   }
 }
