@@ -10,19 +10,20 @@
     </select>
   </span>
   <section class="album-grid" *ngIf="!searchInput">
-    <div class="album-listing" *ngFor="let album of albums">
+    <mat-card class="album-listing" *ngFor="let album of albums">
       <img src="{{album.coverArtURL}}" class="album-cover">
-      <h3>{{album.title}}</h3>
-      <h4>{{album.artist}}</h4>
+      <mat-card-title>{{album.title}}</mat-card-title>
+      <mat-card-subtitle>{{album.artist}}</mat-card-subtitle>
       <button (click)="addToCollection(album)">ADD TO COLLECTION</button>
-    </div>
+    </mat-card>
   </section>
   <section class="album-grid" *ngIf="searchInput">
-    <div class="album-listing" *ngFor="let album of filteredAlbums">
+    <mat-card class="album-listing" *ngFor="let album of filteredAlbums">
       <img src="{{album.coverArtURL}}" class="album-cover">
-      <h3>{{album.title}}</h3>
-      <h4>{{album.artist}}</h4>
-    </div>
+      <mat-card-title>{{album.title}}</mat-card-title>
+      <mat-card-subtitle >{{album.artist}}</mat-card-subtitle>
+      <button (click)="addToCollection(album)">ADD TO COLLECTION</button>
+    </mat-card>
     <p *ngIf="!filteredAlbums && searchInput">No results</p>
   </section>
 </div>

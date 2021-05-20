@@ -6,6 +6,7 @@
 
 .album-cover{
   max-width: 60%;
+  margin-bottom: 5%;
 }
 .album-listing{
   background-color: whitesmoke;
@@ -13,6 +14,7 @@
   text-align: center;
   padding: 10% 0 5%;
   margin: 2%;
+  color: black;
 }
 h3, h4{
   margin-bottom: 0;
@@ -21,4 +23,7 @@ h3, h4{
   text-align: center;
   height: 100vh;
   overflow-y: auto;
+}
+mat-card-subtitle{
+  color: black;
 }
