@@ -1,13 +1,13 @@
 <nav>
   <a routerLink="/" id="site-title">NEXT GROOVE</a>
-  <span *ngIf="!this.currentUser">
+  <span *ngIf="!getCurrentUser()">
     <ul>
       <li><a routerLink="/register">REGISTER</a></li>
       <li><a routerLink="/login">LOGIN</a></li>
       <li><a routerLink="/browse/">BROWSE</a></li>
   </ul>
   </span>
-  <span *ngIf="this.currentUser">
+  <span *ngIf="getCurrentUser()">
     <ul>
       <li><a routerLink="/profile/collection">COLLECTION</a></li>
       <li><a routerLink="/contribute">CONTRIBUTE</a></li>

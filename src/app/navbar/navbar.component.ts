@@ -7,11 +7,24 @@ import {UserService} from '../services/user/user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  @Input() currentUser: any;
+  currentUser: any;
 
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   // tslint:disable-next-line:use-lifecycle-interface
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService.searchSubject.subscribe(currentUser => {
+      this.currentUser = currentUser;
+    });
+  }
+
+  getCurrentUser(): boolean {
+    let token = localStorage.getItem('token');
+    if (token){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
