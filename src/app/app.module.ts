@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { LogoutComponent } from './logout/logout.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LogoutComponent } from './logout/logout.component';
     SessionComponent,
     RateComponent,
     ContributeComponent,
-    LogoutComponent
+    LogoutComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

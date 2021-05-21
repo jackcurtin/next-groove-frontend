@@ -9,6 +9,7 @@ import {SessionComponent} from './session/session.component';
 import {RateComponent} from './rate/rate.component';
 import {ContributeComponent} from './contribute/contribute.component';
 import {LogoutComponent} from './logout/logout.component';
+import {LandingComponent} from "./landing/landing.component";
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'contribute',
     component: ContributeComponent
+  },
+  {
+    path: 'welcome',
+    component: LandingComponent
   }
 ];
 
