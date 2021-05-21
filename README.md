@@ -3,7 +3,9 @@
 Next Groove is an app that allows users to catalog their album collection and receive
 recommendations on what should be played next. With streaming services constantly feeding
 us algorithmic playlists based on our listening patterns, this app aims to do the same
-within the confines of a user's collection.
+for physical media.
+
+![plot](images/next-groove-preview.png)
 
 ### How it works...
 
@@ -43,6 +45,23 @@ the album's listing in the user's collection will display the record recommendat
 ##### Deployment
 - Heroku
 
+### Dependencies
+##### Back-end (Maven)
+- spring-boot-starter-data-jpa
+- jjwt
+- spring-security-web
+- spring-security-config
+- spring-security-core
+- postgresql
+##### Front-End (Angular)
+- BrowserModule
+- AppRoutingModule
+- BrowserAnimationsModule
+- FormsModule
+- HttpClientModule
+- MatSliderModule (Angular Material)
+- MatFormFieldModule (Angular Material)
+- MatCardModule (Angular Material)
 
 ### Future Development
 
@@ -169,5 +188,21 @@ the HTML components over to their Material counterparts.
 ##### 5/20/21
 - Wrapped up what I had started last night with users submitting ratings. Also added a basic menu for creating an album entry, but wasn't able to work out the kinks of dropdown 
   menus/sliders. I'll try and circle back if I have time, but overall today is about giving the website a pretty intense facelift overall, as well as debugging.
-- Overall, the styling with Angular Material went well, but the button module would not import for some reason. The site looks fine for the presentation. I had to remove a few 
+- The styling with Angular Material went well, but the button module would not import for some reason. The site looks fine for the presentation. I had to remove a few 
   things that were buggy and that I don't currently have the time to work out. At this point (5pm), I'm going to focus on deployment and documentation.
+
+
+### Reflection
+Overall, I am quite proud of getting this project to its current state. I had a lot of ideas before any
+code was written and was excited to see what I could implement in the given time. I do wish that the CSS was 
+more responsive and that I had a chance to debug some of the Angular Material imports that were not working,
+but the bulk of the work has been completed for an MVP and I can focus on polishing up the front end on my
+own time. Unintentionally, I dedicated much more time to building out the Spring Boot back-end. As the project
+developed, I realized I would need a pretty robust API to just have my basic MVP functional. It was very good for
+both direction and morale to have a clear idea of what front-end was going to look like, as well as knowing that
+I would be building it. 
+
+Out of everything in this project, I am most proud of how the model in my database are connected to one another 
+and how easily a lot of information can be passed between them.This was absolutely a comprehensive review of 
+everything we learned throughout this cohort and gave me the perfect opportunity to sharpen my skills as a full-stack 
+developer before jumping into a career.
