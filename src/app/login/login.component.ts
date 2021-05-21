@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     const user = {email: this.email, password: this.password};
     console.log(user);
     this.userService.loginUser(user);
-    this.router.navigate(['/browse']);
+    this.router.navigate(['/welcome']);
   }
 
   constructor(private userService: UserService, private router: Router) { }

@@ -1,11 +1,11 @@
 <mat-card class="center-flex">
-  <div *ngIf="!currentProfile">
+  <div *ngIf="!currentProfile" class="landing-listing">
     <mat-card-title>An Algorithm for Vinyl Lovers</mat-card-title>
     <img src="https://media.istockphoto.com/photos/abstract-dj-background-picture-id962136972?k=6&m=962136972&s=612x612&w=0&h=p6FrFLGb23W8aO8P5A1oO8MfRDZzT9LNK0a-uxMfzqg=">
     <mat-card-subtitle>Too many records to choose from? Let's help point you in the right direction.</mat-card-subtitle>
 
   </div>
-  <div *ngIf="currentProfile">
+  <div *ngIf="currentProfile" class="landing-listing">
     <mat-card-title>Hi, {{currentProfile.name}}</mat-card-title>
     <img src="https://media.istockphoto.com/photos/abstract-dj-background-picture-id962136972?k=6&m=962136972&s=612x612&w=0&h=p6FrFLGb23W8aO8P5A1oO8MfRDZzT9LNK0a-uxMfzqg=">
     <mat-card-title>Let's dust off that turntable once again</mat-card-title>

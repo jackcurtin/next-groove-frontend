@@ -1,0 +1,11 @@
+.landing-listing{
+  text-align: center;
+}
+.center-flex{
+  margin: 8% 25%;
+  align-content: space-evenly;
+}
+img{
+  width: 70%;
+  margin: 5% 0;
+}
