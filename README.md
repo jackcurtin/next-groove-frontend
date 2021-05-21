@@ -29,4 +29,22 @@ value is selected as the match, though if the difference between these values is
 album that initially had the closest mood rating. Starting a session by clicking the "select" button within
 the album's listing in the user's collection will display the record recommendation.
 
+## API Endpoints
+| http method |Endpoint |Functionality| Access|  Header |   Body    |  
+| ------ | ------ | ------ | ------ | ------ | ------ |
+|POST| /auth/register  |  Create user | Public  | - |  "email", "password" |
+|POST| /auth/login |  User login to generate JWT Token | Public  | - |  "email" , "password" |
+|POST| /auth/createProfile  |  Create user Profile based on UserToken | Private  |Authorization : Bearer {{JWTToken}}| "name"  |
+|GET| /albums/browse  |  List all albums | Public  | - | - |
+|GET|  /albums/browse/{id}  |  Returns a single album from ID | Public  | - | - |
+|POST| /albums/add  |Creates a new album in database  | Private | Authorization : Bearer {{JWTToken}} |  "title", "artist",  "genre", "coverArtURL", "fsValue", "udValue", "hiLoValue", "mdValue" |
+|POST| /albums/addToCollection/{id}  |  adds album to user's collection in profile  | Private  | Authorization : Bearer {{JWTToken}} | - |
+|GET| /genres | List all the authors |public |  - | - |
+|GET| /genres/{id}  |  Returns a single genre from ID |Public |-| - |
+|POST| /genres/add |Creates a new genre | Private |Authorization : Bearer {{JWTToken}} | "name" |
+|GET| /profile  |  Returns entire user profile object determined by JWT token | Private  | Authorization : Bearer {{JWTToken}} | - |
+|GET| /profile/collection  |  Returns user's album collection through profile determined by JWT token | Private  | Authorization : Bearer {{JWTToken}} | - |
+|GET| /profile/collection/{id}  |  Returns one album from user's collection through profile determined by JWT token | Private  | Authorization : Bearer {{JWTToken}} | - |
+|DELETE| /profile/collection/{id}| Removes album from user's collection using supplied id |Private | Authorization : Bearer {{JWTToken}} | -|
+|PUT| /profile/collection/{id}/rate  |  Saves a rating of album to database | Private  | Authorization : Bearer {{JWTToken}} | "fsValue", "udValue", "hiLoValue", "mdValue |
 
