@@ -14,8 +14,9 @@ h2{
   text-align: center;
   margin-top: 15%;
 }
-button{
+.gray-button{
   width: 15%;
+  padding: 1% 2%;
 }
 
 

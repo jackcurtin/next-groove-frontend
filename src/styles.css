@@ -13,3 +13,18 @@ ul{ list-style: none}
   justify-items: center;
   align-items: center;
 }
+
+.gray-button{
+  background-color: slategray;
+  border: grey outset 1px;
+  color: whitesmoke;
+  padding: 5%;
+  width: 40%;
+  margin: 2%;
+  text-align: center;
+}
+.gray-button:hover{
+  background-color: lightslategray;
+  cursor: pointer;
+
+}

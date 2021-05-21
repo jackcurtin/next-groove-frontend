@@ -26,9 +26,9 @@
           </div>
         </div>
         <div id="buttons">
-          <button (click)="selectAlbum(album)" id="select-button">select</button>
-          <button (click)="goToRating(album)" id="rating-button">rate</button>
-          <button (click)="removeFromCollection(album)" id="remove-button">remove</button>
+          <a class="gray-button" (click)="selectAlbum(album)" id="select-button">select</a>
+          <a class="gray-button" (click)="goToRating(album)" id="rating-button">rate</a>
+          <a class="gray-button" (click)="removeFromCollection(album)" id="remove-button">remove</a>
         </div>
       </mat-card>
     </li>
@@ -37,6 +37,6 @@
 <section *ngIf="mySelection">
   <app-session [selection]="mySelection" [collection]="myCollection"></app-session>
   <div class="center-flex">
-    <a (click)="clearSession()" id="end-session">End Session</a>
+    <a (click)="clearSession()" id="end-session" class="gray-button">End Session</a>
   </div>
 </section>
