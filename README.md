@@ -1,27 +1,32 @@
 # NextGroove
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+NextGroove is an app that allows users to catalog their album collection and receive
+recommendations on what should be played next. With streaming services constantly feeding
+us algorithmic playlists based on our listening patterns, this app aims to do the same
+within the confines of a user's collection.
 
-## Development server
+### How it works...
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The database is publicly available for any and all to browse at their leisure, however, user
+profiles are required to maintain a collection and receive recommendations, as well as offer
+contributions to the database. Once a profile has been created, users can add albums to their
+collection through the browse page. If a user already has a specific record, the "add to collection"
+button should be disabled as to avoid users from adding multiple copies to their collection.
 
-## Code scaffolding
+Each album has an aggregate Tone and Mood rating, which is based on individual ratings each
+user can submit for any album in their collection. Once an album has been added to one's collection,
+they can submit a rating through the button on their collection listing. Tone and Mood each have two
+sub-categories that determine what the album sounds like. Tone consists of "production" (the clarity 
+of the recording) and "arrangement" (how much instrumentation is present), while Mood consists of "tempo"
+and "emotion" (both of which are self-explanatory). These values are on a scale of -5 to 5, but in no way
+dictate the quality of the album. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+It's best thought of as each Tone/Mood rating respectively as a pair of x and y coordinates on a graph. The 
+recommendation is determined by which album's tone and mood ratings sit the closest on that graph to the 
+current one. If the album with the closest tone rating differs from the one with the closest mood rating, 
+the inverse value of each one is then crossed with the current selection. Whichever album has the closer inverse
+value is selected as the match, though if the difference between these values is equal, the tie goes to the 
+album that initially had the closest mood rating. Starting a session by clicking the "select" button within
+the album's listing in the user's collection will display the record recommendation.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
