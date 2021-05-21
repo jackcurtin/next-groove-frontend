@@ -81,6 +81,7 @@ the HTML components over to their Material counterparts.
 |DELETE| /profile/collection/{id}| Removes album from user's collection using supplied id |Private | Authorization : Bearer {{JWTToken}} | -|
 |PUT| /profile/collection/{id}/rate  |  Saves a rating of album to database | Private  | Authorization : Bearer {{JWTToken}} | "fsValue", "udValue", "hiLoValue", "mdValue |
 
+
 ###Project Journal
 
 #####5/13/21
