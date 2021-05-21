@@ -137,6 +137,10 @@ the HTML components over to their Material counterparts.
 
 ...use an album in my collection to find other unowned albums with similar "tone" and "mood". [ ]
 
+### ERD Diagram
+![plot](planning/Next%20Groove%20ERD%20v2.png)
+*A prototype of this diagram, as well as the initial wireframe for the front end can be found in the planning directory of this repository.*
+
 ### Project Journal
 
 ##### 5/13/21
