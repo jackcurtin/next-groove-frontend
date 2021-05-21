@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    // reloads the page to ensure the JWT has been destroyed when the user has logged out
     if (!localStorage.getItem('foo')) {
       localStorage.setItem('foo', 'no reload');
       location.reload();

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AlbumService} from '../services/album/album.service';
 import {RatingService} from '../services/rating/rating.service';
-import {ProfileService} from "../services/profile/profile.service";
+import {ProfileService} from '../services/profile/profile.service';
 
 @Component({
   selector: 'app-contribute',
@@ -51,6 +51,7 @@ export class ContributeComponent implements OnInit {
       udValue: this.uD
     };
     const newAlbum = this.albumService.createAlbum(newAlbumObject);
+    // the code below does not work yet, but the idea was to automatically add the new item to the user's collection and rate it
     // this.profileService.addToCollection(newAlbum);
     // this.ratingService.rateAlbum(newAlbum.id, newRatingObject);
   }

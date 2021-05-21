@@ -38,6 +38,7 @@ export class BrowseComponent implements OnInit {
       this.userCollection = response;
     }, err => console.log(err));
   }
+  // checks if the album exists in current profile's collection
   checkForAlbum(album): boolean {
     let verdict;
     this.userCollection.forEach(thisAlbum => {
@@ -62,6 +63,7 @@ export class BrowseComponent implements OnInit {
     });
   }
 
+  // enables live filtering of search results
   pushSearch(searchInput): void{
     this.searchSubject.next(searchInput);
     console.log(this.filteredAlbums);
@@ -72,8 +74,10 @@ export class BrowseComponent implements OnInit {
       this.genreFilter = null;
       this.filteredAlbums = [];
       this.getAlbums();
-    }else{
+    }else if (this.genreFilter != null) {
       this.albums = this.albums.filter(album => album.genre.name === this.genres[this.genreFilter].name);
+    } else{
+      this.albums = this.getAlbums();
     }
   }
 

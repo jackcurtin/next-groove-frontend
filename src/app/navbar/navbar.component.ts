@@ -7,20 +7,16 @@ import {UserService} from '../services/user/user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  currentUser: any;
-
 
   constructor(private userService: UserService) { }
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit(): void {
-    this.userService.searchSubject.subscribe(currentUser => {
-      this.currentUser = currentUser;
-    });
   }
 
+  // checks localStorage for JWT to see if someone is logged in
   getCurrentUser(): boolean {
-    let token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     if (token){
       return true;
     } else {
