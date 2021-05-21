@@ -81,8 +81,8 @@ the HTML components over to their Material counterparts.
 |DELETE| /profile/collection/{id}| Removes album from user's collection using supplied id |Private | Authorization : Bearer {{JWTToken}} | -|
 |PUT| /profile/collection/{id}/rate  |  Saves a rating of album to database | Private  | Authorization : Bearer {{JWTToken}} | "fsValue", "udValue", "hiLoValue", "mdValue |
 
-
 ###Project Journal
+
 #####5/13/21
 - Getting started on the app, setting up the users and authentication was an important first step, since users will need to maintain their own profiles that will 
   hold their collection. I am glad that I spent more time than usual on the planning phase. I made a fairly detailed wireframe for the front end, which is a ways 
