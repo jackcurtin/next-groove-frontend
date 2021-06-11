@@ -1,6 +1,6 @@
 # Next Groove
 Heroku Deployment: https://next-groove.herokuapp.com/welcome
----please allow a few minutes for the page to load and all albums to populate while the server gets started---
+##### please allow a few minutes for the page to load and all albums to populate while the server gets started
 repo for backend: https://github.com/jackcurtin/next-groove-backend
 
 Next Groove is an app that allows users to catalog their album collection and receive
