@@ -1,4 +1,5 @@
 # Next Groove
+repo for backend: https://github.com/jackcurtin/next-groove-backend
 
 Next Groove is an app that allows users to catalog their album collection and receive
 recommendations on what should be played next. With streaming services constantly feeding
